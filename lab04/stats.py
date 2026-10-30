@@ -5,6 +5,8 @@ def parse_record(line: str) -> dict:
 
     city, temp_str, date = parts[0].strip(), parts[1].strip(), parts[2].strip()
 
+    date = date.strip(')"\'')
+
     if not city or not date:
         raise ValueError('Пустое название города или дата')
 
