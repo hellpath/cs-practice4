@@ -9,7 +9,7 @@ def parse_record(line: str) -> dict:
         raise ValueError('Пустое название города или дата')
 
     try:
-        temp = float(temp_str)
+        temp = float(temp_str.replace(',', '.'))
     except ValueError:
         raise  ValueError('Некорректный формат температуры')
 
