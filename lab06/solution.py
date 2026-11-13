@@ -10,3 +10,9 @@ def count_by_extension(paths):
             ext = '.'.join(parts[:-2]).lower()
         extension[ext] = extension.get(ext, 0) + 1
     return extension
+
+def deepest_path(paths):
+    if not paths:
+        return ""
+    sorted_paths = sorted(paths)
+    return max(sorted_paths, key=lambda x: x.count('/'))
